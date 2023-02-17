@@ -1,0 +1,61 @@
+:root {
+    --background-color: #FBF0E8;
+    --border-color: #F8D0D0;
+    --button-color: #534859;
+    /*purpleish-gray*/
+    --primary-text-color: #534859;
+    --secondary-text-color: #F9688D;
+    --tertiary-text-color: #F4F4F4;
+    --box-color-pink: #FFCCCC;
+    --color: #CC9999;
+    --colour: #996666;
+    --co: #663333;
+    /* Add font size and increase nav bar font sizes */
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+nav {
+    font-family: 'Halant', serif;
+}
+
+a {
+    color: var(--co);
+    text-decoration: none;
+}
+
+.in-button,
+.out-button {
+    border: var(--button-color);
+    border-radius: 5px;
+    color: var(--tertiary-text-color);
+    background-color: var(--button-color);
+}
+
+.navbar {
+    background-color: var(--border-color) !important;
+}
+
+.navbar-brand {
+    color: var(--co) !important;
+}
+
+/* .container {
+    border: 1px solid black;
+} */
+
+
+
+.in-button {
+    padding: 10px;
+}
+
+.login-card {
+    background-color: white;
+    margin: 1rem;
+    border: 2px var(--color) solid;
+    border-radius: 5px;
+    padding: 10px;
+}
