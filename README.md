@@ -1,4 +1,4 @@
-# Everyday Delights (Blog)
+# Interesting Tech (Blog)
 
 
 ## Description
@@ -14,7 +14,7 @@ This project's functionality depends the following [Node.js version 16.18.0](htt
 * [Node Express Handlebars version 6.0.7](https://www.npmjs.com/package/express-handlebars) package from [npm, Inc.](https://www.npmjs.com/) to implement Handlebars.js for templates. 
 * [Node express-session version 1.17.3](https://www.npmjs.com/package/express-session) package from [npm, Inc.](https://www.npmjs.com/) to store the session id on the client in a cookie and to handle authentication.
 * [Node bcrypt.js version 5.1.0](https://www.npmjs.com/package/bcrypt) package from [npm, Inc.](https://www.npmjs.com/) to hash passwords.
-* [Node Connect Session Store using Sequelize version 7.1.5 (Must be used with express version 4)](https://www.npmjs.com/package/connect-session-sequelize) package from [npm, Inc.](https://www.npmjs.com/) to handle authentication. 
+* [Node Connect Session Store using Sequelize version 7.1.5 (Must be used with express version 4)](https://www.npmjs.com/package/connect-session-sequelize) package from [npm, Inc.](https://www.npmjs.com/) to handle authentication, it is a SQL session store (stores SQL session which lasts for a certain amount of time) to houses all the connections to SQL and the time frame so you can see who is connected.
 * [Node dotenv version 16.0.3](https://www.npmjs.com/package/dotenv) package from [npm, Inc.](https://www.npmjs.com/) to load the environment variables that stored the MySQL username, password, and database name used in development.
 * [Node MySQL 2 version 3.1.2](https://www.npmjs.com/package/mysql2) package from [npm, Inc.](https://www.npmjs.com/) to server as the MySQL connector library used by Sequelize to connect to the MySQL db server.
 * [Node nodemon version 2.0.20 (for development usage only)](https://www.npmjs.com/package/nodemon) package from [npm, Inc.](https://www.npmjs.com/) to automatically restart the node application when file changes in the directory are detected. 
@@ -206,19 +206,37 @@ Method 2:
 
 * Definition and information of MVC credit goes to [Mozilla](https://developer.mozilla.org/en-us/):<br></br> https://developer.mozilla.org/en-US/docs/Glossary/MVC
 
-* []():<br></br> 
+* Word Blog Favicon belongs to [Irfansusanto20](https://www.flaticon.com/authors/irfansusanto20) on [flaticon](https://www.flaticon.com/):<br></br> https://www.flaticon.com/free-icon/content_8841511?term=blog&page=3&position=17&origin=search&related_id=8841511
 
-* []():<br></br> 
+* Halant SemiBold 600 belongs to [Google Fonts](https://fonts.google.com/):<br></br> https://fonts.google.com/specimen/Halant?preview.text=Plugins&preview.text_type=custom
 
-* []():<br></br> 
+* Navbar, Text, Sizing, Flex, and Input group information provided by [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/):<br></br> https://getbootstrap.com/docs/5.3/components/navbar/
+https://getbootstrap.com/docs/5.3/utilities/text/
+https://getbootstrap.com/docs/5.3/utilities/sizing/
+https://getbootstrap.com/docs/5.3/utilities/flex/
+https://getbootstrap.com/docs/5.3/forms/input-group/
 
-* []():<br></br> 
+* Aligning bootstrap nav items to the right credit goes to [Zim](https://stackoverflow.com/users/171456/zim):<br></br> https://stackoverflow.com/questions/41513463/bootstrap-align-navbar-items-to-the-right
 
-* []():<br></br> 
+* Overriding bootstrap color stylings using CSS `!important` rule credit goes to [CODING HABIT (@codinghabit782)](https://www.youtube.com/@codinghabit782):<br></br> https://www.youtube.com/watch?v=kSkmnsS6nw4
 
-* []():<br></br> 
+* CSS `!important` rule supplemental lesson provided by [W3Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/css/css_important.asp
 
-* []():<br></br> 
+* Styling CSS Links supplemental lesson provided by [W3Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/css/css_link.asp
+
+* Showing password function credit goes to [W3Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/howto/howto_js_toggle_password.asp
+
+* []():<br></br>
+
+* []():<br></br>
+
+* []():<br></br>
+
+* []():<br></br>
+
+* []():<br></br>
+
+* []():<br></br>
 
 
 ## Questions
