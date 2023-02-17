@@ -210,10 +210,10 @@ Method 2:
 
 * Halant SemiBold 600 belongs to [Google Fonts](https://fonts.google.com/):<br></br> https://fonts.google.com/specimen/Halant?preview.text=Plugins&preview.text_type=custom
 
-* Navbar, Text, Sizing, Flex, and Input group information provided by [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/):<br></br> https://getbootstrap.com/docs/5.3/components/navbar/
-https://getbootstrap.com/docs/5.3/utilities/text/
-https://getbootstrap.com/docs/5.3/utilities/sizing/
-https://getbootstrap.com/docs/5.3/utilities/flex/
+* Navbar, Text, Sizing, Flex, and Input group information provided by [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/):<br></br> https://getbootstrap.com/docs/5.3/components/navbar/<br></br>
+https://getbootstrap.com/docs/5.3/utilities/text/<br></br>
+https://getbootstrap.com/docs/5.3/utilities/sizing/<br></br>
+https://getbootstrap.com/docs/5.3/utilities/flex/<br></br>
 https://getbootstrap.com/docs/5.3/forms/input-group/
 
 * Aligning bootstrap nav items to the right credit goes to [Zim](https://stackoverflow.com/users/171456/zim):<br></br> https://stackoverflow.com/questions/41513463/bootstrap-align-navbar-items-to-the-right
