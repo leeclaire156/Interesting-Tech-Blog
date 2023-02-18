@@ -1,0 +1,33 @@
+{
+  "name": "interesting-tech-blog",
+  "version": "1.0.0",
+  "description": "This is content management system (CMS) style blog where users can make blog posts and comment on other user's posts as well.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeclaire156/Interesting-Tech-Blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leeclaire156/Interesting-Tech-Blog/issues"
+  },
+  "homepage": "https://github.com/leeclaire156/Interesting-Tech-Blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.1.2",
+    "sequelize": "^6.28.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
