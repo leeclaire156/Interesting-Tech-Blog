@@ -146,19 +146,19 @@ Method 2 - File > Preferences > Setting:
 
 * Please click on the following link of the deployed website, [#blank]()
 
-* To work on changes to this application, start by creating the database in MySQL either through the MySQL environment using MySQL Workbench to use the `CREATE DATABASE everyday_delights_db;` script in [db/schema.sql](./db/schema.sql), OR through a command line.
+* To work on changes to this application, start by creating the database in MySQL either through the MySQL environment using MySQL Workbench to use the `CREATE DATABASE interesting_tech_db;` script in [db/schema.sql](./db/schema.sql), OR through a command line.
     
     * Regardless of whether you use the command line or workbench, you will have to provide the database's password first. **Do not save your password to the value.**
 
     ![Workbench Homepage](./assets/screenshots/Workbench-Home.PNG)
 
-    * If you are creating a database through the Workbench application, type `CREATE DATABASE everyday_delights_db;` into the SQL file and click on the lightning bolt icon (#1 in image below) to execute the script. Then, click on the refresh icon (#2 in image below) under SCHEMAS in the Navigation side bar to the left. The database will display (#3 in the image below).
+    * If you are creating a database through the Workbench application, type `CREATE DATABASE interesting_tech_db;` into the SQL file and click on the lightning bolt icon (#1 in image below) to execute the script. Then, click on the refresh icon (#2 in image below) under SCHEMAS in the Navigation side bar to the left. The database will display (#3 in the image below).
 
     ![Workbench Creating Database](./assets/screenshots/Workbench-Create-Database.PNG)
 
 * Create a `.env` file with the following information (with the database password [DB_PW] being changed to your password that was established in the MySQL Server installation):
     ```
-    DB_NAME='everyday_delights_db'
+    DB_NAME='interesting_tech_db'
     DB_PW='password'
     DB_USER='root'
     ```
