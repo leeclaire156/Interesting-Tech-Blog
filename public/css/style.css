@@ -26,14 +26,6 @@ a {
     text-decoration: none;
 }
 
-.in-button,
-.out-button {
-    border: var(--button-color);
-    border-radius: 5px;
-    color: var(--tertiary-text-color);
-    background-color: var(--button-color);
-}
-
 .navbar {
     background-color: var(--border-color) !important;
 }
@@ -42,21 +34,20 @@ a {
     color: var(--co) !important;
 }
 
-/* .container {
-    border: 1px solid black;
-} */
-
-
-
-.in-button {
-    padding: 10px;
-}
-
-.login-card,
-.signup-card {
+.login-form,
+.signup-form {
     background-color: white;
     margin: 1rem;
     border: 2px var(--color) solid;
     border-radius: 5px;
     padding: 10px;
+}
+
+.login-button,
+.signup-button {
+    padding: 5px;
+    border: var(--button-color);
+    border-radius: 5px;
+    color: var(--tertiary-text-color);
+    background-color: var(--button-color);
 }

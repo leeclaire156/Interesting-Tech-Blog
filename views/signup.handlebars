@@ -1,23 +1,23 @@
-<div class="signup-card body h-100 p-3 d-flex flex-column">
+<div class="signup-form body h-100 p-3 d-flex flex-column">
     <h2 class="signup-text text-center">Sign Up</h2>
 
-    <input type="text" class="form-control input-group mt-3" placeholder="Username" aria-label="Username"
-        aria-describedby="basic-addon1">
+    <input type="text" id="username-signup" class="username form-control input-group mt-3" placeholder="Username"
+        aria-label="Username" aria-describedby="basic-addon1">
 
-    <input type="password" id="myInput" class="form-control input-group mt-3" placeholder="Password"
+    <input type="password" id="password-signup" class="password form-control input-group mt-3" placeholder="Password"
         aria-label="Password" aria-describedby="basic-addon1">
 
     <div class="m-2">
         <input type="checkbox" onclick="showPassword()"> Show Password
     </div>
 
-    <button class="in-button mt-2 mw-100">
-        Sign Up
-    </button>
+    <button class="signup-button mt-2 mw-100" type="submit">Sign Up</button>
 
     <div class="d-flex justify-content-center mt-4">
-        {{!-- TODO: Add Route --}}
-        <a class="sign-up" href="../login">Log In</a>
+        <a class="login-link" href="../login">Log In</a>
     </div>
 
 </div>
+
+<script src="/js/password.js"></script>
+<script src="/js/signup.js"></script>
