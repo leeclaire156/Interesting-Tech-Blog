@@ -52,7 +52,8 @@ a {
     padding: 10px;
 }
 
-.login-card {
+.login-card,
+.signup-card {
     background-color: white;
     margin: 1rem;
     border: 2px var(--color) solid;
