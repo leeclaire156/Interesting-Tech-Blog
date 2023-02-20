@@ -43,11 +43,31 @@ a {
     padding: 10px;
 }
 
-.login-button,
-.signup-button {
+button {
     padding: 5px;
     border: var(--button-color);
     border-radius: 5px;
     color: var(--tertiary-text-color);
     background-color: var(--button-color);
+}
+
+.back-button {
+    border: var(--colour) !important;
+    background-color: var(--colour) !important;
+    color: var(--tertiary-text-color) !important;
+}
+
+.post-button {
+    border: var(--co) !important;
+    background-color: var(--co) !important;
+    color: var(--tertiary-text-color) !important;
+}
+
+.post-form {
+    background-color: white;
+    margin: 1rem;
+    border: 2px white solid;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px 14px var(--border-color);
 }
