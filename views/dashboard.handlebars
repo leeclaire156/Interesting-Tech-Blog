@@ -1,14 +1,12 @@
-{{!-- TODO: make New Post icon button on lower right, if clicked on, toggle new post form box and make disappear --}}
-
 {{!-- New post form --}}
-<form class="post-form w-75 mt-3 d-flex flex-column">
+<form id="new-post-form" class="post-form w-75 mt-3 ms-2 d-flex flex-column d-none">
     <h2>New Post</h2>
     <label class="w-100">Title:</label>
-    <input type="text" class="form-control input-group mt-2" placeholder="Title" aria-label="Post Title"
-        aria-describedby="basic-addon1">
+    <input type="text" id="new-post-title" class="form-control input-group mt-2" placeholder="Title"
+        aria-label="Post Title" aria-describedby="basic-addon1">
     <label class="w-100 mt-2">Content:</label>
-    <textarea type="text" class="form-control input-group mt-2" rows="5" placeholder="Write something, anything."
-        aria-label="Post Contents" aria-describedby="basic-addon1"></textarea>
+    <textarea type="text" id="new-post-content" class="form-control input-group mt-2" rows="5"
+        placeholder="Write something, anything." aria-label="Post Contents" aria-describedby="basic-addon1"></textarea>
     <div class="buttons mt-2 d-flex justify-content-end">
         <button class="back-button me-2">Go Back</button>
         <button class="post-button ps-3 pe-3">Post</button>
@@ -16,3 +14,9 @@
 </form>
 {{!-- submit = POST route to new post --}}
 {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
+
+{{!-- TODO: make New Post icon button on lower right, if clicked on, toggle new post form box and make disappear --}}
+<button id="new-post-button">New Post</button>
+
+
+<script src="/js/post.js"></script>
