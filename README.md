@@ -210,11 +210,12 @@ Method 2:
 
 * Halant SemiBold 600 belongs to [Google Fonts](https://fonts.google.com/):<br></br> https://fonts.google.com/specimen/Halant?preview.text=Plugins&preview.text_type=custom
 
-* Navbar, Text, Sizing, Flex, and Input group information provided by [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/):<br></br> https://getbootstrap.com/docs/5.3/components/navbar/<br></br>
+* Navbar, Text, Sizing, Flex, Input group information, and margin/padding provided by [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/):<br></br> https://getbootstrap.com/docs/5.3/components/navbar/<br></br>
 https://getbootstrap.com/docs/5.3/utilities/text/<br></br>
 https://getbootstrap.com/docs/5.3/utilities/sizing/<br></br>
 https://getbootstrap.com/docs/5.3/utilities/flex/<br></br>
-https://getbootstrap.com/docs/5.3/forms/input-group/
+https://getbootstrap.com/docs/5.3/forms/input-group/<br></br>
+https://getbootstrap.com/docs/5.3/utilities/spacing/#margin-and-padding<br></br>
 
 * Aligning bootstrap nav items to the right credit goes to [Zim](https://stackoverflow.com/users/171456/zim):<br></br> https://stackoverflow.com/questions/41513463/bootstrap-align-navbar-items-to-the-right
 
@@ -226,11 +227,11 @@ https://getbootstrap.com/docs/5.3/forms/input-group/
 
 * Showing password function credit goes to [W3Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/howto/howto_js_toggle_password.asp
 
-* []():<br></br>
+* belongsToMany vs hasMany supplemental lesson provided by [psrz](https://laracasts.com/@psrz) on [DavidBuchukuri's Laracasts forum](https://laracasts.com/discuss/channels/eloquent/belongstomany-vs-hasmany):<br></br> https://hackernoon.com/eloquent-relationships-cheat-sheet-5155498c209
 
-* []():<br></br>
+* CSS Box Shadow information provided by [W3Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/css/css3_shadows_box.asp
 
-* []():<br></br>
+* []():<br></br> 
 
 * []():<br></br>
 
