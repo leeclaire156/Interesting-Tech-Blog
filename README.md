@@ -210,12 +210,13 @@ Method 2:
 
 * Halant SemiBold 600 belongs to [Google Fonts](https://fonts.google.com/):<br></br> https://fonts.google.com/specimen/Halant?preview.text=Plugins&preview.text_type=custom
 
-* Navbar, Text, Sizing, Flex, Input group information, and margin/padding provided by [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/):<br></br> https://getbootstrap.com/docs/5.3/components/navbar/<br></br>
+* Navbar, Text, Sizing, Flex, Input group information, margin/padding, display provided by [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/):<br></br> https://getbootstrap.com/docs/5.3/components/navbar/<br></br>
 https://getbootstrap.com/docs/5.3/utilities/text/<br></br>
 https://getbootstrap.com/docs/5.3/utilities/sizing/<br></br>
 https://getbootstrap.com/docs/5.3/utilities/flex/<br></br>
 https://getbootstrap.com/docs/5.3/forms/input-group/<br></br>
 https://getbootstrap.com/docs/5.3/utilities/spacing/#margin-and-padding<br></br>
+https://getbootstrap.com/docs/5.3/utilities/display/<br></br>
 
 * Aligning bootstrap nav items to the right credit goes to [Zim](https://stackoverflow.com/users/171456/zim):<br></br> https://stackoverflow.com/questions/41513463/bootstrap-align-navbar-items-to-the-right
 
@@ -231,7 +232,9 @@ https://getbootstrap.com/docs/5.3/utilities/spacing/#margin-and-padding<br></br>
 
 * CSS Box Shadow information provided by [W3Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/css/css3_shadows_box.asp
 
-* []():<br></br> 
+*  Add class information provided by[W3Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/howto/howto_js_add_class.asp
+
+* Remove class information provided by [W3Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/howto/howto_js_remove_class.asp
 
 * []():<br></br>
 
@@ -239,6 +242,11 @@ https://getbootstrap.com/docs/5.3/utilities/spacing/#margin-and-padding<br></br>
 
 * []():<br></br>
 
+* []():<br></br>
+
+* []():<br></br>
+
+* []():<br></br>
 
 ## Questions
 If you have any questions, my GitHub profile is [www.github.com/leeclaire156](www.github.com/leeclaire156), and my email is [lee.claire156@gmail.com](mailto:lee.claire156@gmail.com).
