@@ -16,7 +16,12 @@ async function logIn(event) {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if (response.ok) { console.log("successfully logged in") }
+        if (response.ok) {
+            // If successful, redirect the browser to the home page
+            document.location.replace('/');
+        } else {
+            console.error(response.statusText);
+        }
     }
 };
 
