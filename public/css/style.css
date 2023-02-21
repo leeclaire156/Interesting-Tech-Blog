@@ -3,10 +3,13 @@
     --border-color: #F8D0D0;
     --button-color: #534859;
     /*purpleish-gray*/
-    --primary-text-color: #534859;
-    --secondary-text-color: #F9688D;
+    --primary-text-color: #e2b0dc;
+    /*can change*/
+    --secondary-text-color: #c42d94;
+    /*can change*/
     --tertiary-text-color: #F4F4F4;
     --box-color-pink: #FFCCCC;
+    /*can change*/
     --color: #CC9999;
     --colour: #996666;
     --co: #663333;
@@ -81,4 +84,13 @@ button {
 .icon-button {
     border: 3px var(--button-color) solid;
     background-color: var(--border-color);
+}
+
+.post-header {
+    background-color: var(--secondary-text-color);
+
+}
+
+.post-main {
+    background-color: var(--primary-text-color);
 }
