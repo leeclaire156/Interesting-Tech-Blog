@@ -1,5 +1,5 @@
 {{!-- New post form --}}
-<form id="new-post-form" class="post-form w-75 mt-3 ms-2 d-flex flex-column d-none">
+<form id="new-post-form" class="post-form mt-3 d-flex flex-column d-none">
     <h2>New Post</h2>
     <label class="w-100">Title:</label>
     <input type="text" id="new-post-title" class="form-control input-group mt-2" placeholder="Title"
@@ -8,15 +8,19 @@
     <textarea type="text" id="new-post-content" class="form-control input-group mt-2" rows="5"
         placeholder="Write something, anything." aria-label="Post Contents" aria-describedby="basic-addon1"></textarea>
     <div class="buttons mt-2 d-flex justify-content-end">
+        {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
         <button class="back-button me-2">Go Back</button>
+        {{!-- post = POST route to new post --}}
         <button class="post-button ps-3 pe-3">Post</button>
     </div>
 </form>
-{{!-- submit = POST route to new post --}}
-{{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
 
-{{!-- TODO: make New Post icon button on lower right, if clicked on, toggle new post form box and make disappear --}}
-<button id="new-post-button">New Post</button>
 
+{{!-- TODO: make New Post icon button on lower right --}}
+<div class="buttons mt-2 d-flex justify-content-end">
+    <button id="new-post-button" class="icon-button">
+        <img src="/images/new_post-Icon_Hubs-32px.png" alt="New Post Icon">
+    </button>
+</div>
 
 <script src="/js/post.js"></script>
