@@ -1,12 +1,12 @@
 <div class="d-flex flex-column"><!--the container for all the posts should be in column form-->
-    {{#each post as |post|}}
+    {{#each posts as |post|}}
     <div class="d-block mt-3">
         <div class="post-header d-flex flex-row align-items-baseline justify-content-between pt-1">
             <h2 class="homepage-post-title col-6 ps-1">
                 <a href="/post/{{post.id}}">{{post.title}}</a>
             </h2>
             <h5 class="pe-2">
-                created by {{post.user.name}} on {{format_date project.date_created}}
+                created by {{post.user.username}} on {{format_date post.createdAt}}
             </h5>
         </div>
         <div class="post-main">

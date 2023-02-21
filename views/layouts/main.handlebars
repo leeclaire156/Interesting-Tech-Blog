@@ -25,34 +25,26 @@
                     IT Blog
                 </a>
                 <div class="ml-auto">
-                    <!-- Conditionally render login or logout links -->
-                    {{!-- {{#if logged_in}} --}}
                     <a href="/">Home</a> |
                     <a href="/dashboard">Dashboard</a> |
-                    {{!-- <button class="out-button" id="logout">Log out</button>
-                    {{else}} --}}
+                    <!-- Conditionally render login or logout links -->
+                    {{#if logged_in}}
+                    <button class="out-button" id="logout">Log out</button>
+                    {{else}}
                     <a href="/login">Log in</a>
-                    {{!-- {{/if}} --}}
+                    {{/if}}
                 </div>
             </div>
         </nav>
     </header>
 
     <main class="container container-fluid mt-5">
-        <!-- Render the sub layout -->
         {{{ body }}}
     </main>
-
-
-
 
     <!-- Render script for logged in users only - Allows the Log Out button to function -->
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
-    {{else logging_in}}
-    <script src="/js/password.js"></script>
-    {{else sign_up}}
-    <script src="/js/password.js"></script>
     {{/if}}
 
 </body>

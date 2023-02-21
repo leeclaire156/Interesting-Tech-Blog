@@ -2,13 +2,10 @@ const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// TODO: GET all posts for homepage
 
-
+//Homepage is accessible without logging in
 router.get('/', async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
-    res.render('homepage');
-
     try {
         // Get all posts and JOIN with user data
         const postData = await Post.findAll({
@@ -17,16 +14,21 @@ router.get('/', async (req, res) => {
                     model: User,
                     attributes: ['username'],
                 },
-                {
-                    model: Comment,
-                    attributes: ['title', 'body'],
-                },
+                // {
+                //     model: Comment,
+                //     attributes: [
+                //         'title',
+                //         'body',
+                //         'created_at',
+                //     ],
+                //     include: {
+                //         model: User,
+                //         attributes: ['username'],
+                //     }
+                // },
             ],
         });
-
-        // Serialize data so the template can read it
         const posts = postData.map((post) => post.get({ plain: true }));
-
         // Pass serialized data and session flag into template
         res.render('homepage', {
             posts,
@@ -40,6 +42,7 @@ router.get('/', async (req, res) => {
 
 
 router.get('/login', (req, res) => {
+    //Once the user is logged in, the user should be redirected to the homepage
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
@@ -58,7 +61,7 @@ router.get('/signup', (req, res) => {
 });
 
 //add withAuth middleware to only allow dashboard access if the user is logged in
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
