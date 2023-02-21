@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
 
-//Creates (through POST route) new post from sign up form
+//Creates (through POST route) new post from new comment form
 router.post('/', async (req, res) => {
     try {
         const newComment = await Comment.create(req.body);
