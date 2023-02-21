@@ -20,3 +20,10 @@ async function signUp(event) {
     }
 };
 
+//Pressing Enter is the same as clicking the submit button
+document.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        signupBtn.click();
+    }
+});

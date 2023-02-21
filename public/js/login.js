@@ -19,3 +19,11 @@ async function logIn(event) {
         if (response.ok) { console.log("successfully logged in") }
     }
 };
+
+//Pressing Enter is the same as clicking the submit button
+document.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        loginBtn.click();
+    }
+});
