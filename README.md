@@ -236,7 +236,7 @@ https://getbootstrap.com/docs/5.3/utilities/display/<br></br>
 
 * Remove class information provided by [W3Schools](https://www.w3schools.com/):<br></br> https://www.w3schools.com/howto/howto_js_remove_class.asp
 
-* []():<br></br>
+* Giving edits/delete posts buttons on dashboard page the same functionality credit goes to [Spectric](https://stackoverflow.com/users/14251221/spectric):<br></br> https://stackoverflow.com/questions/69608828/how-do-i-make-multiple-buttons-within-the-same-class-call-to-the-same-parameter
 
 * []():<br></br>
 
