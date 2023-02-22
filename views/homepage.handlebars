@@ -2,21 +2,19 @@
     {{#each posts as |post|}}
     <div class="d-block mt-3">
         <div class="post-header d-flex flex-row align-items-baseline justify-content-between pt-1">
-            <h2 class="homepage-post-title col-6 ps-1">
-                <a href="/post/{{post.id}}">{{post.title}}</a>
-            </h2>
+            <h2 class="homepage-post-title ps-3">{{post.title}}</h2>
             <h5 class="pe-2">
                 created by {{post.user.username}} on {{format_date post.createdAt}}
             </h5>
         </div>
         <div class="post-main">
-            <p class="homepage-post-body pt-1 ps-1">
+            <p class="homepage-post-body pt-3 ps-3">
                 {{post.body}}
             </p>
             <div class="d-flex justify-content-end">
-                <button class="add-comment-button mb-1 me-1">
-                    <img id="add-comment" src="/images/comment-yaicon-32px.png" alt="Add comment icon">
-                </button>
+                <a class="see-more-button mb-1 me-1" href="/post/{{post.id}}">
+                    <img id="see-more" src="/images/more-reussy-32px.png" alt="See More icon">
+                </a>
             </div>
         </div>
     </div>
