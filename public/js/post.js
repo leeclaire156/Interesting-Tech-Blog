@@ -18,6 +18,7 @@ async function makePost(event) {
 
         if (response.ok) {
             console.log("successfully made new post");
+            document.location.replace('/dashboard');
             hidePostForm;
         }
     }
