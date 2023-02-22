@@ -238,7 +238,17 @@ https://getbootstrap.com/docs/5.3/utilities/display/<br></br>
 
 * Giving edits/delete posts buttons on dashboard page the same functionality credit goes to [Spectric](https://stackoverflow.com/users/14251221/spectric):<br></br> https://stackoverflow.com/questions/69608828/how-do-i-make-multiple-buttons-within-the-same-class-call-to-the-same-parameter
 
-* []():<br></br>
+* Setting text area values credit goes to [Andrew Jackman](https://stackoverflow.com/users/484772/andrew-jackman):<br></br> https://stackoverflow.com/questions/6007219/how-to-add-default-value-for-html-textarea
+
+* Create attribute information provided by [W3Schools](https://www.w3schools.com/):<br></br>https://www.w3schools.com/jsref/met_document_createattribute.asp
+
+* Text content information provided by [W3Schools](https://www.w3schools.com/):<br></br>https://www.w3schools.com/jsref/prop_node_textcontent.asp
+
+* Inner text information provided by [W3Schools](https://www.w3schools.com/):<br></br>https://www.w3schools.com/jsref/prop_node_innertext.asp
+
+* Element children information provided by [W3Schools](https://www.w3schools.com/):<br></br>https://www.w3schools.com/jsref/prop_element_children.asp
+
+* Parent element information provided by [W3Schools](https://www.w3schools.com/):<br></br>https://www.w3schools.com/jsref/prop_node_parentelement.asp
 
 * []():<br></br>
 
@@ -247,6 +257,9 @@ https://getbootstrap.com/docs/5.3/utilities/display/<br></br>
 * []():<br></br>
 
 * []():<br></br>
+
+* []():<br></br>
+
 
 ## Questions
 If you have any questions, my GitHub profile is [www.github.com/leeclaire156](www.github.com/leeclaire156), and my email is [lee.claire156@gmail.com](mailto:lee.claire156@gmail.com).

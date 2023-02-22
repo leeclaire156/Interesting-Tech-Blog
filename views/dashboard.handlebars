@@ -20,23 +20,23 @@
     {{#each posts as |post|}}
     <div class="d-block mt-3">
         <div class="post-header d-flex flex-row align-items-baseline justify-content-between pt-1">
-            <h2 class="homepage-post-title col-6 ps-1">
-                <a href="/post/{{post.id}}">{{post.title}}</a>
+            <h2 class="col-6 ps-1">
+                <a href="/post/{{post.id}}" class="dashboard-post-title">{{post.title}}</a>
             </h2>
             <h5 class="pe-2">
                 created by {{post.user.username}} on {{format_date post.createdAt}}
             </h5>
         </div>
         <div class="post-main">
-            <p class="homepage-post-body pt-1 ps-1">
+            <p class="dashboard-post-body pt-1 ps-1">
                 {{post.body}}
             </p>
             <div class="d-flex justify-content-end">
-                <button class="edit-post-button pb-1 ps-2 mb-1 me-1">
-                    <img id="edit-post" src="/images/edit-Freepik-32px.png" alt="Add comment icon">
+                <button data-id={{post.id}} class="edit-post-button pb-1 ps-2 mb-1 me-1">
+                    <img id="edit-post" src="/images/edit-Freepik-32px.png" alt="Edit icon">
                 </button>
                 <button data-id={{post.id}} class="delete-post-button mb-1 me-1">
-                    <img src="/images/delete-Freepik-32px.png" alt="Add comment icon">
+                    <img src="/images/delete-Freepik-32px.png" alt="Delete icon">
                 </button>
             </div>
         </div>
@@ -45,7 +45,23 @@
 </div>
 {{/if}}
 
-{{!-- TODO: make New Post icon button on lower right --}}
+{{!-- Edit post form --}}
+<form id="edit-post-form" class="post-form mt-3 d-flex flex-column d-none">
+    <h2>Edit Post</h2>
+    <label class="w-100">Title:</label>
+    <input type="text" id="edited-post-title" class="form-control input-group mt-2" aria-label="Post Title"
+        aria-describedby="basic-addon1">
+    <label class="w-100 mt-2">Content:</label>
+    <textarea type="text" id="edited-post-content" class="form-control input-group mt-2" rows="5"
+        aria-label="Post Contents" aria-describedby="basic-addon1">{{post.body}}</textarea>
+    <div class="buttons mt-2 d-flex justify-content-end">
+        {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
+        <button class="back-button me-2">Go Back</button>
+        {{!-- post = PUT route to update post --}}
+        <button class="update-button ps-3 pe-3">Update</button>
+    </div>
+</form>
+
 <div class="buttons mt-2 d-flex justify-content-end">
     <button id="new-post-button" class="icon-button">
         <img src="/images/new_post-Icon_Hubs-32px.png" alt="New Post Icon">
