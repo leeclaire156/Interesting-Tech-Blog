@@ -15,6 +15,35 @@
     </div>
 </form>
 
+{{#if posts.length}}
+<div class="d-flex flex-column"><!--the container for all the posts should be in column form-->
+    {{#each posts as |post|}}
+    <div class="d-block mt-3">
+        <div class="post-header d-flex flex-row align-items-baseline justify-content-between pt-1">
+            <h2 class="homepage-post-title col-6 ps-1">
+                <a href="/post/{{post.id}}">{{post.title}}</a>
+            </h2>
+            <h5 class="pe-2">
+                created by {{post.user.username}} on {{format_date post.createdAt}}
+            </h5>
+        </div>
+        <div class="post-main">
+            <p class="homepage-post-body pt-1 ps-1">
+                {{post.body}}
+            </p>
+            <div class="d-flex justify-content-end">
+                <button class="edit-post-button pb-1 ps-2 mb-1 me-1">
+                    <img id="edit-post" src="/images/edit-Freepik-32px.png" alt="Add comment icon">
+                </button>
+                <button class="delete-post-button mb-1 me-1">
+                    <img id="delete-post" src="/images/delete-Freepik-32px.png" alt="Add comment icon">
+                </button>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
 
 {{!-- TODO: make New Post icon button on lower right --}}
 <div class="buttons mt-2 d-flex justify-content-end">
@@ -23,4 +52,7 @@
     </button>
 </div>
 
+{{!-- Provides function to making a new post and to toggle new post form showing --}}
 <script src="/js/post.js"></script>
+{{!-- Provides function to edit or delete posts --}}
+<script src="/js/dashboard.js"></script>
