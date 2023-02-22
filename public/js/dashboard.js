@@ -1,24 +1,24 @@
 // Delete post functions
 
-// var deleteBtns = document.querySelectorAll(".delete-post-button");
+var deleteBtns = document.querySelectorAll(".delete-post-button");
 
-// deleteBtns.forEach((deleteBtn) => {
-//     deleteBtn.addEventListener('click', deletePost);
-// })
+deleteBtns.forEach((deleteBtn) => {
+    deleteBtn.addEventListener('click', deletePost);
+})
 
-// async function deletePost() {
-//     const id = this.getAttribute('data-id');
-//     const response = await fetch(`/api/posts/${id}`, {
-//         method: 'DELETE',
-//     });
+async function deletePost() {
+    const id = this.getAttribute('data-id');
+    const response = await fetch(`/api/posts/${id}`, {
+        method: 'DELETE',
+    });
 
-//     if (response.ok) {
-//         document.location.replace('/dashboard');
-//     } else {
-//         alert(response.statusText);
-//         alert('Failed to delete post');
-//     }
-// };
+    if (response.ok) {
+        document.location.replace('/dashboard');
+    } else {
+        alert(response.statusText);
+        alert('Failed to delete post');
+    }
+};
 
 // Edit post functions
 
