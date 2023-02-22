@@ -68,7 +68,10 @@ router.get('/dashboard', withAuth, async (req, res) => {
         return;
     }
 
-    res.render('dashboard');
+    res.render('dashboard', {
+        //should render posts made by user
+        logged_in: req.session.logged_in //retains 'if user is logged in' information on dashboard handlebar
+    });
 });
 
 
