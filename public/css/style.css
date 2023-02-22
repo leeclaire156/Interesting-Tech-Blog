@@ -59,6 +59,7 @@ button {
     border-radius: 5px;
 }
 
+.logout-button,
 .login-button,
 .signup-button {
     padding: 5px;
