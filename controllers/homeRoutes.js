@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-
 //Homepage is accessible without logging in
 router.get('/', async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
@@ -41,7 +40,6 @@ router.get('/', async (req, res) => {
 }
 );
 
-
 router.get('/login', (req, res) => {
     //Once the user is logged in, the user should be redirected to the homepage
     if (req.session.loggedIn) {
@@ -60,19 +58,5 @@ router.get('/signup', (req, res) => {
 
     res.render('signup');
 });
-
-//add withAuth middleware to only allow dashboard access if the user is logged in
-router.get('/dashboard', withAuth, async (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-
-    res.render('dashboard', {
-        //should render posts made by user
-        logged_in: req.session.logged_in //retains 'if user is logged in' information on dashboard handlebar
-    });
-});
-
 
 module.exports = router;
