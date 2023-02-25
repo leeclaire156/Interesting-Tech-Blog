@@ -4,26 +4,26 @@ addCommentBtn.addEventListener("click", makeComment);
 async function makeComment(event) {
     event.preventDefault();
     // Collect values from the new comment form
-    const title = document.querySelector('#comment-title').value.trim();
     const body = document.querySelector('#comment-content').value.trim();
 
     const postTitle = document.querySelector(".post-title");
-    const postID = postTitle.getAttribute("data-id");
-    console.log(title, body, postID)
+    const post_id = postTitle.getAttribute("data-id");
+    console.log(body, post_id)
 
-    if (title && body) {
-        // Send a POST request to the API endpoint
-        const response = await fetch('/api/comments/', {
-            method: 'POST',
-            body: JSON.stringify({ title, body }),
-            headers: { 'Content-Type': 'application/json' },
-        });
+    if (body && post_id) {
+        console.log(JSON.stringify({ body, post_id }))
+            // Send a POST request to the API endpoint
+            const response = await fetch('/api/comments/', {
+                method: 'POST',
+                body: JSON.stringify({ body, post_id }),
+                headers: { 'Content-Type': 'application/json' },
+            });
 
-        if (response.ok) {
-            console.log("successfully made new comment");
-            document.location.replace(`/post/${postID}`);
-            hideCommentForm;
-        }
+            if (response.ok) {
+                console.log("successfully made new comment");
+                document.location.replace(`/post/${post_id}`);
+                hideCommentForm;
+            }
     }
 };
 
