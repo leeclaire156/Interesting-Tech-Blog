@@ -4,7 +4,7 @@ postBtn.addEventListener("click", makePost);
 
 async function makePost(event) {
     event.preventDefault();
-    // Collect values from the sign up form
+    // Collect values from the new post form
     const title = document.querySelector('#new-post-title').value.trim();
     const body = document.querySelector('#new-post-content').value.trim();
 
@@ -26,8 +26,9 @@ async function makePost(event) {
 
 
 var newPostForm = document.querySelector("#new-post-form");
-var newPostBtn = document.querySelector("#new-post-button");
+var newPostBtn = document.querySelector(".new-post-button");
 var goBackBtn = document.querySelector(".back-button");
+var dashboardPosts = document.querySelector(".posts");
 
 newPostBtn.addEventListener("click", showPostForm);
 goBackBtn.addEventListener("click", hidePostForm);
@@ -36,12 +37,12 @@ function showPostForm(event) {
     event.preventDefault();
     newPostForm.classList.remove("d-none");
     newPostBtn.classList.add("d-none");
-
+    dashboardPosts.classList.add("d-none");
 };
 
 function hidePostForm(event) {
     event.preventDefault();
     newPostForm.classList.add("d-none");
     newPostBtn.classList.remove("d-none");
-
+    dashboardPosts.classList.remove("d-none");
 };
