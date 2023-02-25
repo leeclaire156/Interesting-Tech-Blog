@@ -11,10 +11,6 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         body: {
             type: DataTypes.STRING,
             allowNull: false,

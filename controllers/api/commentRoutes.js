@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
     try {
         // Get all comments and JOIN with user data
-        const postData = await Comment.findAll({
+        const commentData = await Comment.findAll({
             include: [
                 {
                     model: User,
@@ -14,10 +14,10 @@ router.get('/', async (req, res) => {
                 },
             ],
         });
-        const posts = postData.map((post) => post.get({ plain: true }));
+        const comments = commentData.map((post) => post.get({ plain: true }));
         // Pass serialized data and session flag into template
         res.render('post', {
-            posts,
+            comments,
             logged_in: req.session.logged_in
         });
     } catch (err) {
