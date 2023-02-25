@@ -1,7 +1,7 @@
 <div class="d-flex flex-column"><!--the container for all the posts should be in column form-->
     <div class="d-block mt-3">
         <div class="post-header d-flex flex-row align-items-baseline justify-content-between pt-1 ps-3">
-            <h2 class="homepage-post-title ps-1">
+            <h2 data-id={{post.id}} class="post-title ps-1">
                 {{title}}
             </h2>
             <h5 class="pe-2">
@@ -14,12 +14,50 @@
             </p>
         </div>
 
-        {{!-- TO BE INSERTED - COMMENTS --}}
+
+        {{!-- New Comment form --}}
+        <form id="add-comment-form" class="post-form mt-3 d-flex flex-column d-none">
+            <h2>Add Comment</h2>
+            <label class="w-100">Title:</label>
+            <input type="text" id="comment-title" class="form-control input-group mt-2" aria-label="Comment Title"
+                aria-describedby="basic-addon1">
+            <label class="w-100 mt-2">Content:</label>
+            <textarea type="text" id="comment-content" class="form-control input-group mt-2" rows="5"
+                aria-label="Post Contents" aria-describedby="basic-addon1">{{comment.body}}</textarea>
+            <div class="buttons mt-2 d-flex justify-content-end">
+                {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
+                <button class="back-button me-2">Go Back</button>
+                {{!-- post = PUT route to update post --}}
+                <button class="add-comment-button ps-3 pe-3">Add</button>
+            </div>
+        </form>
+
+
+        {{!-- Edit Comment form --}}
+        <form id="edit-comment-form" class="post-form mt-3 d-flex flex-column d-none">
+            <h2>Add Comment</h2>
+            <label class="w-100">Title:</label>
+            <input type="text" id="comment-title" class="form-control input-group mt-2" aria-label="Comment Title"
+                aria-describedby="basic-addon1">
+            <label class="w-100 mt-2">Content:</label>
+            <textarea type="text" id="comment-content" class="form-control input-group mt-2" rows="5"
+                aria-label="Post Contents" aria-describedby="basic-addon1">{{comment.body}}</textarea>
+            <div class="buttons mt-2 d-flex justify-content-end">
+                {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
+                <button class="back-button me-2">Go Back</button>
+                {{!-- post = PUT route to update post --}}
+                <button class="update-button ps-3 pe-3">Update</button>
+            </div>
+        </form>
+
 
         <div class="d-flex justify-content-end">
-            <button class="add-comment-button mb-1 me-1">
-                <img id="add-comment" src="/images/comment-yaicon-32px.png" alt="Add comment icon">
+            <button class="comment-form-btn mb-1 me-1">
+                <img src="/images/comment-yaicon-32px.png" alt="Add comment icon">
             </button>
         </div>
     </div>
 </div>
+
+
+<script src="/js/comment.js"></script>
