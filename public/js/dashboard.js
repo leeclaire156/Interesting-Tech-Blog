@@ -23,7 +23,7 @@ async function deletePost() {
 // Edit post functions
 
 var editPostForm = document.querySelector("#edit-post-form");
-var newPostBtn = document.querySelector("#new-post-button");
+var newPostBtn = document.querySelector(".new-post-button");
 var goBackBtn = document.querySelector(".back-button");
 
 var editBtns = document.querySelectorAll(".edit-post-button");
