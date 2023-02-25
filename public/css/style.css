@@ -89,3 +89,11 @@ button {
 .post-main {
     background-color: var(--body-color);
 }
+
+.comment-header {
+    background-color: var(--header-color);
+}
+
+.comment-main {
+    background-color: var(--body-color);
+}

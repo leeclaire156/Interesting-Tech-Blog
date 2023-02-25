@@ -13,23 +13,11 @@ router.get('/', async (req, res) => {
                     model: User,
                     attributes: ['username'],
                 },
-                // {
-                //     model: Comment,
-                //     attributes: [
-                //         'title',
-                //         'body',
-                //         'created_at',
-                //     ],
-                //     include: {
-                //         model: User,
-                //         attributes: ['username'],
-                //     }
-                // },
             ],
         });
         const reversePost = postData.reverse()
         const posts = reversePost.map((post) => post.get({ plain: true }));
-        // Pass serialized data and session flag into template
+        // Pass serialized data and session flag into homepage template
         res.render('homepage', {
             posts,
             logged_in: req.session.logged_in
@@ -48,12 +36,19 @@ router.get('/post/:id', async (req, res) => {
                     model: User,
                     attributes: ['username'],
                 },
+                {
+                    model: Comment,
+                    include: {
+                        model: User,
+                        attributes: ['username'],
+                    }
+                },
             ],
         });
         // res.status(200).json(postData);
 
         const post = postData.get({ plain: true });
-
+        // Pass serialized data and session flag into post template
         res.render('post', {
             ...post,
             logged_in: req.session.logged_in
