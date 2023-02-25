@@ -52,7 +52,11 @@
                 {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
                 <button class="back-button me-2">Go Back</button>
                 {{!-- post = PUT route to update post --}}
+                {{#if logged_in}}
                 <button class="add-comment-button ps-3 pe-3">Add</button>
+                {{else}}
+                <button class="log-in-button ps-3 pe-3"><a href="/login">Log In</a></button>
+                {{/if}}
             </div>
         </form>
 
