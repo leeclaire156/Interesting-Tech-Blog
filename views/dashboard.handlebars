@@ -15,8 +15,9 @@
     </div>
 </form>
 
-{{#if posts.length}}
+
 <div class="d-flex flex-column posts"><!--the container for all the posts should be in column form-->
+    {{#if posts.length}}
     {{#each posts as |post|}}
     <div class="d-block mt-3">
         <div class="post-header d-flex flex-row align-items-baseline justify-content-between pt-1">
@@ -42,8 +43,11 @@
         </div>
     </div>
     {{/each}}
+    {{else}}
+    <h2 class="text-center">You have no posts</h2>
+    {{/if}}
 </div>
-{{/if}}
+
 
 {{!-- Edit post form --}}
 <form id="edit-post-form" class="post-form mt-3 d-flex flex-column d-none">
