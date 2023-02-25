@@ -1,18 +1,13 @@
 :root {
     --background-color: #FBF0E8;
-    --border-color: #F8D0D0;
+    --nav-color: #F8D0D0;
     --button-color: #534859;
-    /*purpleish-gray*/
-    --primary-text-color: #e2b0dc;
-    /*can change*/
-    --secondary-text-color: #c42d94;
-    /*can change*/
-    --tertiary-text-color: #F4F4F4;
-    --box-color-pink: #FFCCCC;
-    /*can change*/
-    --color: #CC9999;
-    --colour: #996666;
-    --co: #663333;
+    --header-color: #faa7b1;
+    --body-color: #f8cdcf;
+    --text-color: #F4F4F4;
+    --light-brown: #CC9999;
+    --brown: #996666;
+    --dark-brown: #663333;
     /* Add font size and increase nav bar font sizes */
 }
 
@@ -25,23 +20,23 @@ nav {
 }
 
 a {
-    color: var(--co);
+    color: var(--dark-brown);
     text-decoration: none;
 }
 
 .navbar {
-    background-color: var(--border-color) !important;
+    background-color: var(--nav-color) !important;
 }
 
 .navbar-brand {
-    color: var(--co) !important;
+    color: var(--dark-brown) !important;
 }
 
 .login-form,
 .signup-form {
     background-color: white;
     margin: 1rem;
-    border: 2px var(--color) solid;
+    border: 2px var(--light-brown) solid;
     border-radius: 5px;
     padding: 10px;
 }
@@ -52,7 +47,7 @@ a {
     border: 2px white solid;
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 2px 2px 14px var(--border-color);
+    box-shadow: 2px 2px 14px var(--nav-color);
 }
 
 button {
@@ -65,33 +60,32 @@ button {
     padding: 5px;
     border: var(--button-color);
     background-color: var(--button-color);
-    color: var(--tertiary-text-color);
+    color: var(--text-color);
 }
 
 .back-button {
     padding: 5px;
-    border: var(--colour);
-    background-color: var(--colour);
-    color: var(--tertiary-text-color);
+    border: var(--brown);
+    background-color: var(--brown);
+    color: var(--text-color);
 }
 
 .post-button {
     padding: 5px;
-    border: var(--co);
-    background-color: var(--co);
-    color: var(--tertiary-text-color);
+    border: var(--dark-brown);
+    background-color: var(--dark-brown);
+    color: var(--text-color);
 }
 
-.icon-button {
+.new-post-button {
     border: 3px var(--button-color) solid;
-    background-color: var(--border-color);
+    background-color: var(--nav-color);
 }
 
 .post-header {
-    background-color: var(--secondary-text-color);
-
+    background-color: var(--header-color);
 }
 
 .post-main {
-    background-color: var(--primary-text-color);
+    background-color: var(--body-color);
 }
