@@ -1,7 +1,7 @@
 <div class="d-flex flex-column"><!--the container for all the posts should be in column form-->
     <div class="d-block mt-3">
         <div class="post-header d-flex flex-row align-items-baseline justify-content-between pt-1 ps-3">
-            <h2 data-id={{post.id}} class="post-title ps-1">
+            <h2 data-id={{id}} class="post-title ps-1">
                 {{title}}
             </h2>
             <h5 class="pe-2">
@@ -14,6 +14,36 @@
             </p>
         </div>
 
+{{!-- 
+        {{#if comments.length}}
+        <div class="d-flex flex-column comments"><!--the container for all the posts should be in column form-->
+            {{#each comments as |comment|}}
+            <div class="d-block mt-3">
+                <div class="comment-header d-flex flex-row align-items-baseline justify-content-between pt-1">
+                    <h2 class="col-6 ps-1">
+                        <a class="dashboard-post-title">{{comment.title}}</a>
+                    </h2>
+                    <h5 class="pe-2">
+                        created on {{format_date comment.createdAt}}
+                    </h5>
+                </div>
+                <div class="comment-main">
+                    <p class="dashboard-comment-body pt-1 ps-1">
+                        {{comment.body}}
+                    </p>
+                    <div class="d-flex justify-content-end">
+                        <button data-id={{comment.id}} class="edit-comment-button pb-1 ps-2 mb-1 me-1">
+                            <img id="edit-comment" src="/images/edit-Freepik-32px.png" alt="Edit icon">
+                        </button>
+                        <button data-id={{comment.id}} class="delete-comment-button mb-1 me-1">
+                            <img src="/images/delete-Freepik-32px.png" alt="Delete icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}} --}}
 
         {{!-- New Comment form --}}
         <form id="add-comment-form" class="post-form mt-3 d-flex flex-column d-none">

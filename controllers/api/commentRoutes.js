@@ -1,10 +1,41 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-//Creates (through POST route) new post from new comment form
-router.post('/', async (req, res) => {
+router.get('/', async (req, res) => {
+    // Send the rendered Handlebars.js template back as the response
     try {
-        const newComment = await Comment.create(req.body);
+        // Get all comments and JOIN with user data
+        const postData = await Comment.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+            ],
+        });
+        const posts = postData.map((post) => post.get({ plain: true }));
+        // Pass serialized data and session flag into template
+        res.render('post', {
+            posts,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+);
+
+//Creates (through POST route) new post from new comment form,
+// but only if the user is logged in (withAuth)
+router.post('/', withAuth, async (req, res) => {
+    try {
+        const newComment = await Comment.create({
+            ...req.body,
+            user_id: req.session.user_id, //Connects comment with its creator, the logged in user
+        });
+
+        res.status(200).json(newComment);
     } catch (err) {
         res.status(400).json(err);
     }

@@ -9,22 +9,22 @@ async function makeComment(event) {
 
     const postTitle = document.querySelector(".post-title");
     const postID = postTitle.getAttribute("data-id");
-    console.log(title, body, postID);
+    console.log(title, body, postID)
 
-    // if (title && body) {
-    //     // Send a POST request to the API endpoint
-    //     const response = await fetch('/api/comments/', {
-    //         method: 'POST',
-    //         body: JSON.stringify({ title, body, postID }),
-    //         headers: { 'Content-Type': 'application/json' },
-    //     });
+    if (title && body) {
+        // Send a POST request to the API endpoint
+        const response = await fetch('/api/comments/', {
+            method: 'POST',
+            body: JSON.stringify({ title, body }),
+            headers: { 'Content-Type': 'application/json' },
+        });
 
-    //     if (response.ok) {
-    //         console.log("successfully made new comment");
-    //         document.location.replace(`/post/${postID}`);
-    //         hideCommentForm;
-    //     }
-    // }
+        if (response.ok) {
+            console.log("successfully made new comment");
+            document.location.replace(`/post/${postID}`);
+            hideCommentForm;
+        }
+    }
 };
 
 var addCommentForm = document.querySelector("#add-comment-form");
