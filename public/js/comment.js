@@ -1,5 +1,8 @@
 var addCommentBtn = document.querySelector(".add-comment-button");
-addCommentBtn.addEventListener("click", makeComment);
+
+if (addCommentBtn) {
+    addCommentBtn.addEventListener("click", makeComment);
+}
 
 async function makeComment(event) {
     event.preventDefault();
@@ -12,18 +15,18 @@ async function makeComment(event) {
 
     if (body && post_id) {
         console.log(JSON.stringify({ body, post_id }))
-            // Send a POST request to the API endpoint
-            const response = await fetch('/api/comments/', {
-                method: 'POST',
-                body: JSON.stringify({ body, post_id }),
-                headers: { 'Content-Type': 'application/json' },
-            });
+        // Send a POST request to the API endpoint
+        const response = await fetch('/api/comments/', {
+            method: 'POST',
+            body: JSON.stringify({ body, post_id }),
+            headers: { 'Content-Type': 'application/json' },
+        });
 
-            if (response.ok) {
-                console.log("successfully made new comment");
-                document.location.replace(`/post/${post_id}`);
-                hideCommentForm;
-            }
+        if (response.ok) {
+            console.log("successfully made new comment");
+            document.location.replace(`/post/${post_id}`);
+            hideCommentForm;
+        }
     }
 };
 
