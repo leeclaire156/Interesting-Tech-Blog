@@ -1,0 +1,35 @@
+<div class="d-flex flex-column"><!--the container for all the posts should be in column form-->
+    {{!-- Single Post template --}}
+    <div class="d-block mt-3">
+        <div class="post-header d-flex flex-row align-items-baseline justify-content-between pt-1 ps-3">
+            <h2 data-id={{id}} class="post-title ps-1">
+                {{title}}
+            </h2>
+            <h5 class="pe-2">
+                created by {{user.username}} on {{format_date createdAt}}
+            </h5>
+        </div>
+        <div class="post-main">
+            <p class="homepage-post-body ps-3 pt-3 pb-3">
+                {{body}}
+            </p>
+        </div>
+
+        {{!-- add new comment button --}}
+        <div class="d-flex justify-content-end">
+            <button class="comment-form-btn mb-1 me-1">
+                <img src="/images/comment-yaicon-32px.png" alt="Add comment icon">
+            </button>
+        </div>
+
+        {{> newComment}}
+
+        {{> comments}}
+
+        {{> editComment}}
+
+    </div>
+</div>
+
+
+<script src="/js/comment.js"></script>

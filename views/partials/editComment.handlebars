@@ -1,0 +1,23 @@
+{{!-- Edit Comment form --}}
+<form id="edit-comment-form" class="post-form mt-3 d-flex flex-column d-none">
+    <h2>Update Comment</h2>
+
+    <label class="w-100 mt-2">Content:</label>
+    <textarea type="text" id="edited-comment-content" class="form-control input-group mt-2" rows="5"
+        aria-label="Post Contents" aria-describedby="basic-addon1">{{comment.body}}</textarea>
+
+    {{!-- buttons --}}
+    <div class="buttons mt-2 d-flex justify-content-end">
+        {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
+        <button class="back-button me-2">Go Back</button>
+        {{#if logged_in}}
+        <button type="button" class="delete-comment-button pt-1 pb-1">
+            <img src="/images/delete-Freepik-32px.png" alt="Delete icon">
+        </button>
+        {{!-- post = PUT route to update post --}}
+        <button type="button" class="update-button ps-3 pe-3 ms-1">Update</button>
+        {{else}}
+        <button class="log-in-button ps-3 pe-3"><a href="/login">Log In</a></button>
+        {{/if}}
+    </div>
+</form>

@@ -1,0 +1,20 @@
+{{!-- Edit post form --}}
+<form id="edit-post-form" class="post-form mt-3 d-flex flex-column d-none">
+    <h2>Edit Post</h2>
+
+    <label class="w-100">Title:</label>
+    <input type="text" id="edited-post-title" class="form-control input-group mt-2">
+
+    <label class="w-100 mt-2">Content:</label>
+    <textarea type="text" id="edited-post-content" class="form-control input-group mt-2"
+        rows="5">{{post.body}}</textarea>
+
+    {{!-- buttons --}}
+    <div class="buttons mt-2 d-flex justify-content-end">
+        {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
+        <button class="edit-back-button me-2">Go Back</button>
+        {{!-- post = PUT route to update post --}}
+        <button class="update-button ps-3 pe-3">Update</button>
+    </div>
+
+</form>

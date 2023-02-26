@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "seed": "node seeds/index.js",
-    "lint": "jshint public/js/comment.js"
+    "lint": "jshint public/js/post.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "sequelize": "^6.28.0"
   },
   "devDependencies": {
+    "jshint": "^2.13.6",
     "nodemon": "^2.0.20"
   }
 }
