@@ -145,7 +145,7 @@ Method 2 - File > Preferences > Setting:
 
 ## Usage - for the purposes of this demonstration, Git Bash will be used as my preferred terminal and MySQL Workbench will be used
 
-* Please click on the following link of the deployed website, [#blank]()
+* Please click on the following link of the deployed website, [https://interesting-tech-blog.herokuapp.com/](https://interesting-tech-blog.herokuapp.com/)
 
 * To work on changes to this application, start by creating the database in MySQL either through the MySQL environment using MySQL Workbench to use the `CREATE DATABASE interesting_tech_db;` script in [db/schema.sql](./db/schema.sql), OR through a command line.
     
