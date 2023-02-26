@@ -12,10 +12,8 @@ async function makeComment(event) {
 
     const postTitle = document.querySelector(".post-title");
     const post_id = postTitle.getAttribute("data-id");
-    console.log(body, post_id)
 
     if (body && post_id) {
-        console.log(JSON.stringify({ body, post_id }))
         // Send a POST request to the API endpoint
         const response = await fetch('/api/comments/', {
             method: 'POST',
@@ -26,13 +24,13 @@ async function makeComment(event) {
         if (response.ok) {
             console.log("successfully made new comment");
             document.location.replace(`/post/${post_id}`);
-            hideCommentForm;
+            hideCommentForm();
         }
     }
-};
+}
 
 var addCommentForm = document.querySelector("#add-comment-form");
-var commentFormBtn = document.querySelector(".comment-form-btn")
+var commentFormBtn = document.querySelector(".comment-form-btn");
 var goBackBtn = document.querySelector(".back-button");
 
 commentFormBtn.addEventListener("click", showCommentForm);
@@ -42,13 +40,13 @@ function showCommentForm(event) {
     event.preventDefault();
     addCommentForm.classList.remove("d-none");
     commentFormBtn.classList.add("d-none");
-};
+}
 
 function hideCommentForm(event) {
     event.preventDefault();
     addCommentForm.classList.add("d-none");
     commentFormBtn.classList.remove("d-none");
-};
+}
 
 
 // Delete comment functions
@@ -57,7 +55,7 @@ var deleteBtns = document.querySelectorAll(".delete-comment-button");
 
 deleteBtns.forEach((deleteBtn) => {
     deleteBtn.addEventListener('click', deleteComment);
-})
+});
 
 async function deleteComment() {
     const id = this.getAttribute('data-id');
@@ -65,7 +63,6 @@ async function deleteComment() {
     const postTitle = document.querySelector(".post-title");
     const post_id = postTitle.getAttribute("data-id");
 
-    console.log("Clicked!", id)
     const response = await fetch(`/api/comments/${id}`, {
         method: 'DELETE',
     });
@@ -73,74 +70,68 @@ async function deleteComment() {
     if (response.ok) {
         document.location.replace(`/post/${post_id}`);
     } else {
+        alert('Unauthorized permission'); //Change error text
+    }
+}
+
+// Edit comments functions
+
+var editCommentForm = document.querySelector("#edit-comment-form");
+var goBackBtn = document.querySelector(".back-button");
+
+var editBtns = document.querySelectorAll(".edit-comment-button");
+var updateBtn = document.querySelector(".update-button");
+
+editBtns.forEach((editBtn) => {
+    editBtn.addEventListener('click', openCommentEditor);
+});
+
+function openCommentEditor(event) {
+    event.preventDefault();
+
+    // Obtains information about target comment
+    var id = this.getAttribute('data-id');
+    var bodyContent = this.parentElement.previousElementSibling.textContent.trim();
+
+    // Opens edit form
+    editCommentForm.classList.remove("d-none");
+    commentFormBtn.classList.add("d-none");
+
+    // Sets edit form's data-id to the respective post's id for the Update button
+    const editFormID = document.createAttribute("data-id");
+    editFormID.value = id;
+    const updateBtn = document.querySelector('.update-button');
+    updateBtn.setAttributeNode(editFormID);
+
+    // Sets edit form's body to the respective post's body
+    const editCommentFormBody = document.querySelector('#edited-comment-content');
+    editCommentFormBody.innerText = bodyContent;
+}
+
+updateBtn.addEventListener('click', updateComment);
+async function updateComment(event) {
+    event.preventDefault();
+
+    const id = this.getAttribute('data-id');
+
+    const body = document.querySelector('#edited-comment-content').value;
+
+    const postTitle = document.querySelector(".post-title");
+    const post_id = postTitle.getAttribute("data-id");
+
+    console.log(id, body);
+    //CHECK CONTROLLER IF POSTID AND OR COMMENT ID NEEDS TO BE PASSED IN
+    const response = await fetch(`/api/comments/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({ id, body }),
+        headers: { 'Content-Type': 'application/json' },
+    });
+
+
+    if (response.ok) {
+        document.location.replace(`/post/${post_id}`);
+    } else {
         alert(response.statusText);
-        alert('Failed to delete comment');
+        alert('Failed to edit comment');
     }
 };
-
-// // Edit comments functions
-
-// var editPostForm = document.querySelector("#edit-post-form");
-// var newPostBtn = document.querySelector(".new-post-button");
-// var goBackBtn = document.querySelector(".back-button");
-
-// var editBtns = document.querySelectorAll(".edit-post-button");
-// var updateBtn = document.querySelector(".update-button")
-
-// editBtns.forEach((editBtn) => {
-//     editBtn.addEventListener('click', openPostEditor);
-// })
-
-// function openPostEditor(event) {
-//     event.preventDefault();
-
-//     // Obtains information about target post
-//     var id = this.getAttribute('data-id');
-//     var titleText = this.parentElement.parentElement.previousElementSibling.children[0].innerText;
-//     var bodyContent = this.parentElement.previousElementSibling.textContent.trim();
-
-//     // Opens edit form
-//     editPostForm.classList.remove("d-none");
-//     newPostBtn.classList.add("d-none");
-
-//     // Sets edit form's data-id to the respective post's id for the Update button
-//     const editFormID = document.createAttribute("data-id");
-//     editFormID.value = id;
-//     const updateBtn = document.querySelector('.update-button');
-//     updateBtn.setAttributeNode(editFormID);
-
-//     // Sets edit form's title to the respective post's title
-//     const att = document.createAttribute("value");
-//     att.value = titleText;
-//     const editPostFormTitle = document.querySelector('#edited-post-title');
-//     editPostFormTitle.setAttributeNode(att);
-
-//     // Sets edit form's body to the respective post's body
-//     const editPostFormBody = document.querySelector('#edited-post-content');
-//     editPostFormBody.innerText = bodyContent;
-// }
-
-// updateBtn.addEventListener('click', updatePost);
-// async function updatePost(event) {
-//     event.preventDefault();
-
-//     const id = this.getAttribute('data-id');
-
-//     const title = document.querySelector('#edited-post-title').value;
-
-//     const body = document.querySelector('#edited-post-content').value;
-
-//     const response = await fetch(`/api/posts/${id}`, {
-//         method: 'PUT',
-//         body: JSON.stringify({ title, body }),
-//         headers: { 'Content-Type': 'application/json' },
-//     });
-
-
-//     if (response.ok) {
-//         document.location.replace('/dashboard');
-//     } else {
-//         alert(response.statusText);
-//         alert('Failed to edit post');
-//     }
-// };

@@ -4,3 +4,4 @@ node_modules
 Challenge-README.md
 views/layouts/*.html
 .vscode
+.jshintrc
