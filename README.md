@@ -18,6 +18,7 @@ This project's functionality depends the following [Node.js version 16.18.0](htt
 * [Node dotenv version 16.0.3](https://www.npmjs.com/package/dotenv) package from [npm, Inc.](https://www.npmjs.com/) to load the environment variables that stored the MySQL username, password, and database name used in development.
 * [Node MySQL 2 version 3.1.2](https://www.npmjs.com/package/mysql2) package from [npm, Inc.](https://www.npmjs.com/) to server as the MySQL connector library used by Sequelize to connect to the MySQL db server.
 * [Node nodemon version 2.0.20 (for development usage only)](https://www.npmjs.com/package/nodemon) package from [npm, Inc.](https://www.npmjs.com/) to automatically restart the node application when file changes in the directory are detected. 
+* [Node JSHint version 2.13.6 (for development usage only)](https://www.npmjs.com/package/nodemon) package from [npm, Inc.](https://www.npmjs.com/) to check for issues in a JS file. 
 
 ## Table of Contents
 - [Installation](#installation-for-further-development-only)
@@ -34,6 +35,7 @@ This project's functionality depends the following [Node.js version 16.18.0](htt
         - [dotenv (dependency)](#dotenv-version-1603---required-for-further-development-for-loading-environment-variables-mysql-username-password-and-database-name-stored-in-env)
         - [mysql2 (dependency)](#mysql2-version-312---required-for-further-development-for-accessing-database)
         - [nodemon (development dependency)](#nodemon-version-2020---recommended-as-a-devdependency-for-updating-server-without-needing-to-close-and-reopen-after-each-change-to-api-route-files)
+        - [JSHint (development dependency)](#jshint-version-2136---recommended-as-a-devdependency-to-check-for-potential-issues-in-js-files)
     - [Sequelize (Required)](#sequelize-version-6---required-for-further-development-can-only-be-used-after-installing-node-to-connect-to-database)
 - [Usage](#usage---for-the-purposes-of-this-demonstration-git-bash-will-be-used-as-my-preferred-terminal-and-mysql-workbench-will-be-used)
 - [Credits](#credits)
@@ -134,6 +136,10 @@ Method 2 - File > Preferences > Setting:
 #### `nodemon version 2.0.20` - *Recommended* as a devDependency for updating server without needing to close and reopen after each change to api route files
 
 * Follow the same methods from [Express v4.17.1 Installation Section](#express-version-4171---required-to-establish-routes-to-database-to-use-my-sql-queries) to reach this repository if you've already exited out of the command-line, then type in `npm install -g nodemon` and hit `Enter`.
+
+### `JSHint version 2.13.6` - *Recommended* as a devDependency to check for potential issues in JS files
+
+* Follow the same methods from [Express v4.17.1 Installation Section](#express-version-4171---required-to-establish-routes-to-database-to-use-my-sql-queries) to reach this repository if you've already exited out of the command-line, then type in `npm i jshint` and hit `Enter`.
 
 ### `Sequelize version 6` - **REQUIRED for further development [Can only be used *after* installing Node]** to connect to database
 

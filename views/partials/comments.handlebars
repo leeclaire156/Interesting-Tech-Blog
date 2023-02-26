@@ -1,0 +1,33 @@
+{{!-- All comments template --}}
+<div class="d-flex flex-column comments"><!--the container for all the comments should be in column form-->
+    {{#if comments.length}}
+    {{#each comments as |comment|}}
+
+    {{!-- header --}}
+    <div class="d-block mt-3">
+        <div class="comment-header d-flex flex-row align-items-baseline justify-content-between pt-1">
+            <h5 class="ps-2">{{comment.user.username}}</h5>
+            <h5 class="pe-2">
+                created on {{format_date comment.createdAt}}
+            </h5>
+        </div>
+
+        {{!-- body --}}
+        <div class="comment-main">
+            <p class="comment-body pt-1 ps-2">
+                {{comment.body}}
+            </p>
+            <div class="d-flex justify-content-end">
+                <button data-id={{comment.id}} class="edit-comment-button pb-1 ps-2 mb-1 me-1">
+                    <img id="edit-comment" src="/images/edit-Freepik-32px.png" alt="Edit icon">
+                </button>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+    {{else}}
+    <h2 class="text-center">No comments</h2>
+    {{/if}}
+
+</div>

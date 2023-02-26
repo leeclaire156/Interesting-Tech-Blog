@@ -63,7 +63,9 @@ button {
     color: var(--text-color);
 }
 
-.back-button {
+.back-button,
+.edit-back-button,
+.post-back-button {
     padding: 5px;
     border: var(--brown);
     background-color: var(--brown);

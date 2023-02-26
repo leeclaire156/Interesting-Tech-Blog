@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
-const withAuth = require('../utils/auth');
 
 //Homepage is accessible without logging in
+//Gets ALL posts and displays it on homepage
 router.get('/', async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
     try {
@@ -28,6 +28,7 @@ router.get('/', async (req, res) => {
 }
 );
 
+//Gets a single posts and just displays it on its own page
 router.get('/post/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
@@ -49,7 +50,7 @@ router.get('/post/:id', async (req, res) => {
 
         const post = postData.get({ plain: true });
         // Pass serialized data and session flag into post template
-        res.render('post', {
+        res.render('singlepost', {
             ...post,
             logged_in: req.session.logged_in
         });
@@ -58,6 +59,7 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
+//Gets login form and displays it on its own page
 router.get('/login', (req, res) => {
     //Once the user is logged in, the user should be redirected to the homepage
     if (req.session.loggedIn) {
@@ -65,15 +67,18 @@ router.get('/login', (req, res) => {
         return;
     }
 
+    //Renders login handlebars template on the login page
     res.render('login');
 });
 
+//Gets login form and displays it on its own page
 router.get('/signup', (req, res) => {
+    //Once the user is logged in, the user should be redirected to the homepage
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
-
+    //Renders signup handlebars template on the signup page
     res.render('signup');
 });
 

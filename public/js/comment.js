@@ -1,5 +1,47 @@
-// Add new comments functions
+// Add new comments var
+var addCommentForm = document.querySelector("#add-comment-form");
+var commentFormBtn = document.querySelector(".comment-form-btn");
+var goBackBtn = document.querySelector(".back-button");
+
 var addCommentBtn = document.querySelector(".add-comment-button");
+
+// Edit comments functions
+
+var editCommentForm = document.querySelector("#edit-comment-form");
+var goBackBtn = document.querySelector(".back-button");
+
+var editBtns = document.querySelectorAll(".edit-comment-button");
+var updateBtn = document.querySelector(".update-button");
+
+// Delete comment var
+
+var deleteBtn = document.querySelector(".delete-comment-button");
+
+
+
+// Add new comments functions
+
+commentFormBtn.addEventListener("click", showCommentForm);
+
+function showCommentForm(event) {
+    event.preventDefault();
+    addCommentForm.classList.remove("d-none");
+    commentFormBtn.classList.add("d-none");
+    editBtns.forEach((editBtn) => {
+        editBtn.classList.add("d-none");
+    });
+}
+
+goBackBtn.addEventListener("click", hideCommentForm);
+
+function hideCommentForm(event) {
+    event.preventDefault();
+    addCommentForm.classList.add("d-none");
+    commentFormBtn.classList.remove("d-none");
+    editBtns.forEach((editBtn) => {
+        editBtn.classList.remove("d-none");
+    });
+}
 
 if (addCommentBtn) {
     addCommentBtn.addEventListener("click", makeComment);
@@ -29,32 +71,8 @@ async function makeComment(event) {
     }
 }
 
-var addCommentForm = document.querySelector("#add-comment-form");
-var commentFormBtn = document.querySelector(".comment-form-btn");
-var goBackBtn = document.querySelector(".back-button");
-
-commentFormBtn.addEventListener("click", showCommentForm);
-goBackBtn.addEventListener("click", hideCommentForm);
-
-function showCommentForm(event) {
-    event.preventDefault();
-    addCommentForm.classList.remove("d-none");
-    commentFormBtn.classList.add("d-none");
-}
-
-function hideCommentForm(event) {
-    event.preventDefault();
-    addCommentForm.classList.add("d-none");
-    commentFormBtn.classList.remove("d-none");
-}
 
 // Edit comments functions
-
-var editCommentForm = document.querySelector("#edit-comment-form");
-var goBackBtn = document.querySelector(".back-button");
-
-var editBtns = document.querySelectorAll(".edit-comment-button");
-var updateBtn = document.querySelector(".update-button");
 
 editBtns.forEach((editBtn) => {
     editBtn.addEventListener('click', openCommentEditor);
@@ -101,8 +119,6 @@ async function updateComment(event) {
     const postTitle = document.querySelector(".post-title");
     const post_id = postTitle.getAttribute("data-id");
 
-    console.log(id, body);
-    //CHECK CONTROLLER IF POSTID AND OR COMMENT ID NEEDS TO BE PASSED IN
     const response = await fetch(`/api/comments/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ id, body }),
@@ -115,10 +131,9 @@ async function updateComment(event) {
     } else {
         alert('Unauthorized permission');
     }
-};
+}
 
 // Delete comment functions
-var deleteBtn = document.querySelector(".delete-comment-button");
 
 if (deleteBtn) {
     deleteBtn.addEventListener('click', deleteComment);

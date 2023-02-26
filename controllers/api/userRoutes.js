@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
 
         req.session.save(() => {
             req.session.user_id = userData.id;
-            req.session.logged_in = true;
+            req.session.logged_in = true; //Logs in the user once they've signed up
 
             res.status(200).json(userData);
         });
@@ -29,6 +29,7 @@ router.post('/login', async (req, res) => {
             return;
         }
 
+        // Verifies the login password with the password store in the database
         const validPassword = await userData.checkPassword(req.body.password);
 
         if (!validPassword) {
@@ -38,6 +39,7 @@ router.post('/login', async (req, res) => {
             return;
         }
 
+        // Create session variables based on the logged in user
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
@@ -52,6 +54,7 @@ router.post('/login', async (req, res) => {
 
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
+        // When the user logs out, destroys the session variables
         req.session.destroy(() => {
             res.status(204).end();
         });

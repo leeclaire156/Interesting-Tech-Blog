@@ -1,21 +1,6 @@
-{{!-- New post form --}}
-<form id="new-post-form" class="post-form mt-3 d-flex flex-column d-none">
-    <h2>New Post</h2>
-    <label class="w-100">Title:</label>
-    <input type="text" id="new-post-title" class="form-control input-group mt-2" placeholder="Title"
-        aria-label="Post Title" aria-describedby="basic-addon1">
-    <label class="w-100 mt-2">Content:</label>
-    <textarea type="text" id="new-post-content" class="form-control input-group mt-2" rows="5"
-        placeholder="Write something, anything." aria-label="Post Contents" aria-describedby="basic-addon1"></textarea>
-    <div class="buttons mt-2 d-flex justify-content-end">
-        {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
-        <button class="back-button me-2">Go Back</button>
-        {{!-- post = POST route to new post --}}
-        <button class="post-button ps-3 pe-3">Post</button>
-    </div>
-</form>
+{{> newPost}}
 
-
+{{!-- Displays all the logged in user's posts --}}
 <div class="d-flex flex-column posts"><!--the container for all the posts should be in column form-->
     {{#if posts.length}}
     {{#each posts as |post|}}
@@ -48,31 +33,14 @@
     {{/if}}
 </div>
 
+{{> editPost}}
 
-{{!-- Edit post form --}}
-<form id="edit-post-form" class="post-form mt-3 d-flex flex-column d-none">
-    <h2>Edit Post</h2>
-    <label class="w-100">Title:</label>
-    <input type="text" id="edited-post-title" class="form-control input-group mt-2" aria-label="Post Title"
-        aria-describedby="basic-addon1">
-    <label class="w-100 mt-2">Content:</label>
-    <textarea type="text" id="edited-post-content" class="form-control input-group mt-2" rows="5"
-        aria-label="Post Contents" aria-describedby="basic-addon1">{{post.body}}</textarea>
-    <div class="buttons mt-2 d-flex justify-content-end">
-        {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
-        <button class="back-button me-2">Go Back</button>
-        {{!-- post = PUT route to update post --}}
-        <button class="update-button ps-3 pe-3">Update</button>
-    </div>
-</form>
-
+{{!-- Button for making a new Post --}}
 <div class="buttons mt-2 d-flex justify-content-end">
     <button class="new-post-button">
         <img src="/images/new_post-Icon_Hubs-32px.png" alt="New Post Icon">
     </button>
 </div>
 
-{{!-- Provides function to making a new post and to toggle new post form showing --}}
+{{!-- Provides function to making a new post or editing/deleting current one --}}
 <script src="/js/post.js"></script>
-{{!-- Provides function to edit or delete posts --}}
-<script src="/js/dashboard.js"></script>

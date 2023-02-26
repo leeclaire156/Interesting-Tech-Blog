@@ -1,0 +1,20 @@
+{{!-- New post form --}}
+<form id="new-post-form" class="post-form mt-3 d-flex flex-column d-none">
+    <h2>New Post</h2>
+
+    <label class="w-100">Title:</label>
+    <input type="text" id="new-post-title" class="form-control input-group mt-2" placeholder="Title">
+
+    <label class="w-100 mt-2">Content:</label>
+    <textarea type="text" id="new-post-content" class="form-control input-group mt-2" rows="5"
+        placeholder="Write something, anything."></textarea>
+
+    {{!-- buttons --}}
+    <div class="buttons mt-2 d-flex justify-content-end">
+        {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
+        <button class="post-back-button me-2">Go Back</button>
+        {{!-- post = POST route to new post --}}
+        <button class="post-button ps-3 pe-3">Post</button>
+    </div>
+
+</form>
