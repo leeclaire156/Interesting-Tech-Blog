@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
-const withAuth = require('../utils/auth');
 
 //Homepage is accessible without logging in
 router.get('/', async (req, res) => {
@@ -65,15 +64,17 @@ router.get('/login', (req, res) => {
         return;
     }
 
+    //Renders login handlebars template on the login page
     res.render('login');
 });
 
 router.get('/signup', (req, res) => {
+    //Once the user is logged in, the user should be redirected to the homepage
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
-
+    //Renders signup handlebars template on the signup page
     res.render('signup');
 });
 

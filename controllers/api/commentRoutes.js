@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment, User } = require('../../models');
+const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //Creates (through POST route) new comment from new comment form,
@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-// Deletes comment but only if user is logged in
+// Deletes comment but only if user is logged in and the comment belongs to the user
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.destroy({
