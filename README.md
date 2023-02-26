@@ -94,18 +94,13 @@ Method 2 - File > Preferences > Setting:
 
 * After that, right-click the repository and select "Open in External Terminal"
 
-![User uses Visual Studio Code to access repository through external terminal](./assets/screenshots/External-Terminal-Method-1-1.PNG)
-
-![Note the match from Visual Studio Code to the opened external terminal](./assets/screenshots/External-Terminal-Method-1-2.PNG)
-
-
+```
 * If you do not have VSC, open the preferred terminal.
 
 * Use "cd Desktop" to first reach the Desktop, cd stands for change directory.
 
 * Continue using "cd" to navigate through the file path to reach the location of this repository on your computer.
-
-![User uses Change Directory (cd) to access repository through external terminal](./assets/screenshots/External-Terminal-Method-2.PNG)
+```
 
 * Once this repository has been reached, type in `npm i express` into the terminal and hit `Enter`.
 
@@ -173,40 +168,21 @@ Method 2 - File > Preferences > Setting:
 
 * After the database is created and the environment file is created, use either of the two methods described in the [Express v4.17.1 Installation Section](#express-version-4171---required-to-establish-routes-to-database-to-use-my-sql-queries) to reach this repository through the preferred terminal.
 
-Method 1:
-
-![User uses Visual Studio Code to access repository through external terminal](./assets/screenshots/External-Terminal-Method-1-1.PNG)
-
-![Note the match from Visual Studio Code to the opened external terminal](./assets/screenshots/External-Terminal-Method-1-2.PNG)
-
-Method 2:
-
-![User uses Change Directory (cd) to access repository through external terminal](./assets/screenshots/External-Terminal-Method-2.PNG)
-
 * Once this repository has been reached, type in `node seeds` into the terminal and hit `Enter` to seed the database with the given information in the [seeds](./seeds/) folder.
-![Seeding the database](./assets/screenshots/Seeding.PNG)
 
 * Afterwards, you may start the server connection with `node server.js`. If you plan to make changes to the route files, start the server connection with `nodemon server.js` to ease development, as you will not need to open and close the server connection after each change.
 
 * To test the Express.js API routes, open insomnia and click on the Home icon to the left. Create a new Document or Collection with the Create button on the right. Optional: You can first create a new Project to house the Document/Collection.
-![Insomnia Home](./assets/screenshots/Insomnia-Home.PNG)
     
     * If you're in a Document, select the **Debug** tab, then **New HTTP Request** 
 
-        ![Insomnia New HTTP Request in Document](./assets/screenshots/Insomnia-New_Document-HTTP.PNG)
-
     * If you're in a Collection, select **New HTTP Request**.
-
-        ![Insomnia New HTTP Request in Collection](./assets/screenshots/Insomnia-New_Collection-HTTP.PNG)
 
 * You may create as many HTTP Requests as you would like and can organize the requests in folders using the plus symbol next to the filter input bar on the left side of the application. You can also create more HTTP requests through this.
 
-![Creating more HTTP Requests in Insomnia](./assets/screenshots/Insomnia-More_HTTP.PNG)
-
 * Enter the endpoints (e.g. http://localhost:3001/) in the console and press Send to make the requests.
-    
-![Entering endpoint for HTTP Requests in Insomnia](./assets/screenshots/Insomnia-Endpoint.PNG)
 
+* To debug, change the js file you want JSHint to check in package.json under scripts.
 
 ## Credits
 
