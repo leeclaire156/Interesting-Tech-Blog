@@ -2,6 +2,9 @@
   "name": "interesting-tech-blog",
   "version": "1.0.0",
   "description": "This is content management system (CMS) style blog where users can make blog posts and comment on other user's posts as well.",
+  "engines": {
+    "node": "16.18.0"
+  },
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
