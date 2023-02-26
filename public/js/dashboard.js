@@ -86,3 +86,10 @@ async function updatePost(event) {
         alert('Failed to edit post');
     }
 };
+
+goBackBtn.addEventListener("click", hidePostForm);
+function hidePostForm(event) {
+    event.preventDefault();
+    editPostForm.classList.remove("d-none");
+    newPostBtn.classList.add("d-none");
+};

@@ -7,11 +7,11 @@ This is content management system (CMS) style blog where users can make blog pos
 
 This project was used to demonstrate the concept of the model-view-controller [MVC] paradigm, which is a pattern used to develop user interfaces. This is done by by splitting the logic by the Model, the View, and the Controller. The model refers to the how the data is managed and handled, the view is the layout and display shown to the user, while the controller routes commands to the model and view parts.
 
-This project was made with [Sequelize (version 6)](https://sequelize.org/docs/v6/), a promise-based Node.js ORM tool, in order to communicate with the site's MySQL database. The development of this project also utilized [Insomnia version 2022.7.5](https://insomnia.rest/) to test the Express APIs which connect the webpages and their requests. [MySQL WorkBench version 8.0.32](https://dev.mysql.com/doc/workbench/en/) was used to create the database as well as visualize the contents of the models along with the changes that occurred.
+This project was made with [Sequelize (version 6)](https://sequelize.org/docs/v6/), a promise-based Node.js ORM tool, in order to communicate with the site's MySQL database. The development of this project also utilized [Insomnia version 2022.7.5](https://insomnia.rest/) to test the Express APIs which connect the webpages and their requests. [MySQL WorkBench version 8.0.32](https://dev.mysql.com/doc/workbench/en/) was used to create the database as well as visualize the contents of the models with the changes that occurred.
 
 This project's functionality depends the following [Node.js version 16.18.0](https://nodejs.org/en/) packages:
 * [Node Express.JS version 4.18.2](https://www.npmjs.com/package/express) package from [npm, Inc.](https://www.npmjs.com/) to establish routes between pages. 
-* [Node Express Handlebars version 6.0.7](https://www.npmjs.com/package/express-handlebars) package from [npm, Inc.](https://www.npmjs.com/) to implement Handlebars.js for templates. 
+* [Node Express Handlebars version 6.0.7](https://www.npmjs.com/package/express-handlebars) package from [npm, Inc.](https://www.npmjs.com/) to implement Handlebars.js for templates, which is responsible being able to view the webpage. 
 * [Node express-session version 1.17.3](https://www.npmjs.com/package/express-session) package from [npm, Inc.](https://www.npmjs.com/) to store the session id on the client in a cookie and to handle authentication.
 * [Node bcrypt.js version 5.1.0](https://www.npmjs.com/package/bcrypt) package from [npm, Inc.](https://www.npmjs.com/) to hash passwords.
 * [Node Connect Session Store using Sequelize version 7.1.5 (Must be used with express version 4)](https://www.npmjs.com/package/connect-session-sequelize) package from [npm, Inc.](https://www.npmjs.com/) to handle authentication, it is a SQL session store (stores SQL session which lasts for a certain amount of time) to houses all the connections to SQL and the time frame so you can see who is connected.
@@ -249,17 +249,6 @@ https://getbootstrap.com/docs/5.3/utilities/display/<br></br>
 * Element children information provided by [W3Schools](https://www.w3schools.com/):<br></br>https://www.w3schools.com/jsref/prop_element_children.asp
 
 * Parent element information provided by [W3Schools](https://www.w3schools.com/):<br></br>https://www.w3schools.com/jsref/prop_node_parentelement.asp
-
-* []():<br></br>
-
-* []():<br></br>
-
-* []():<br></br>
-
-* []():<br></br>
-
-* []():<br></br>
-
 
 ## Questions
 If you have any questions, my GitHub profile is [www.github.com/leeclaire156](www.github.com/leeclaire156), and my email is [lee.claire156@gmail.com](mailto:lee.claire156@gmail.com).
