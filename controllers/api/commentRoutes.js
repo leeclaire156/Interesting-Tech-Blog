@@ -38,12 +38,14 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 });
 
-// Updates comment but only if user is logged in
+
+// Updates comment but only if user is logged in and the comment belongs to the user
 router.put('/:id', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.findOne({
             where: {
                 id: req.params.id,
+                user_id: req.session.user_id,
             },
         });
 

@@ -48,32 +48,6 @@ function hideCommentForm(event) {
     commentFormBtn.classList.remove("d-none");
 }
 
-
-// Delete comment functions
-
-var deleteBtns = document.querySelectorAll(".delete-comment-button");
-
-deleteBtns.forEach((deleteBtn) => {
-    deleteBtn.addEventListener('click', deleteComment);
-});
-
-async function deleteComment() {
-    const id = this.getAttribute('data-id');
-
-    const postTitle = document.querySelector(".post-title");
-    const post_id = postTitle.getAttribute("data-id");
-
-    const response = await fetch(`/api/comments/${id}`, {
-        method: 'DELETE',
-    });
-
-    if (response.ok) {
-        document.location.replace(`/post/${post_id}`);
-    } else {
-        alert('Unauthorized permission'); //Change error text
-    }
-}
-
 // Edit comments functions
 
 var editCommentForm = document.querySelector("#edit-comment-form");
@@ -97,18 +71,26 @@ function openCommentEditor(event) {
     editCommentForm.classList.remove("d-none");
     commentFormBtn.classList.add("d-none");
 
-    // Sets edit form's data-id to the respective post's id for the Update button
+    // Sets edit form's data-id to the respective post's id for the Update/Delete buttons
     const editFormID = document.createAttribute("data-id");
     editFormID.value = id;
     const updateBtn = document.querySelector('.update-button');
     updateBtn.setAttributeNode(editFormID);
+
+    const deleteID = document.createAttribute("id");
+    deleteID.value = id;
+    const deleteBtn = document.querySelector('.delete-comment-button');
+    deleteBtn.setAttributeNode(deleteID);
 
     // Sets edit form's body to the respective post's body
     const editCommentFormBody = document.querySelector('#edited-comment-content');
     editCommentFormBody.innerText = bodyContent;
 }
 
-updateBtn.addEventListener('click', updateComment);
+if (updateBtn) {
+    updateBtn.addEventListener('click', updateComment);
+}
+
 async function updateComment(event) {
     event.preventDefault();
 
@@ -131,7 +113,30 @@ async function updateComment(event) {
     if (response.ok) {
         document.location.replace(`/post/${post_id}`);
     } else {
-        alert(response.statusText);
-        alert('Failed to edit comment');
+        alert('Unauthorized permission');
     }
 };
+
+// Delete comment functions
+var deleteBtn = document.querySelector(".delete-comment-button");
+
+if (deleteBtn) {
+    deleteBtn.addEventListener('click', deleteComment);
+}
+
+async function deleteComment() {
+    const id = this.getAttribute('id');
+
+    const postTitle = document.querySelector(".post-title");
+    const post_id = postTitle.getAttribute("data-id");
+
+    const response = await fetch(`/api/comments/${id}`, {
+        method: 'DELETE',
+    });
+
+    if (response.ok) {
+        document.location.replace(`/post/${post_id}`);
+    } else {
+        alert('Unauthorized permission');
+    }
+}
