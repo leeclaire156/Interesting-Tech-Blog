@@ -38,30 +38,30 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 });
 
-// // Updates comment but only if user is logged in
-// router.put('/:id', withAuth, async (req, res) => {
-//     try {
-//         const commentData = await Comment.findOne({
-//             where: {
-//                 id: req.params.id,
-//             },
-//         });
+// Updates comment but only if user is logged in
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const commentData = await Comment.findOne({
+            where: {
+                id: req.params.id,
+            },
+        });
 
-//         if (!commentData) {
-//             res.status(404).json({ message: 'Unable to update comment' });
-//             return;
-//         } else {
-//             Comment.update(req.body, {
-//                 where: {
-//                     id: req.params.id,
-//                 },
-//             })
-//         };
+        if (!commentData) {
+            res.status(404).json({ message: 'Unable to update comment' });
+            return;
+        } else {
+            Comment.update(req.body, {
+                where: {
+                    id: req.params.id,
+                },
+            })
+        };
 
-//         res.status(200).json(commentData);
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
+        res.status(200).json(commentData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;

@@ -72,18 +72,15 @@
 
         {{!-- Edit Comment form --}}
         <form id="edit-comment-form" class="post-form mt-3 d-flex flex-column d-none">
-            <h2>Add Comment</h2>
-            <label class="w-100">Title:</label>
-            <input type="text" id="comment-title" class="form-control input-group mt-2" aria-label="Comment Title"
-                aria-describedby="basic-addon1">
+            <h2>Update Comment</h2>
             <label class="w-100 mt-2">Content:</label>
-            <textarea type="text" id="comment-content" class="form-control input-group mt-2" rows="5"
+            <textarea type="text" id="edited-comment-content" class="form-control input-group mt-2" rows="5"
                 aria-label="Post Contents" aria-describedby="basic-addon1">{{comment.body}}</textarea>
             <div class="buttons mt-2 d-flex justify-content-end">
                 {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
                 <button class="back-button me-2">Go Back</button>
                 {{!-- post = PUT route to update post --}}
-                <button class="update-button ps-3 pe-3">Update</button>
+                <button type="button" class="update-button ps-3 pe-3">Update</button>
             </div>
         </form>
 
